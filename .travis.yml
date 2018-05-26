@@ -1,0 +1,10 @@
+language: python
+cache: pip
+python:
+  - "3.6"
+script:
+  - python setup.py test
+after_script:
+  - pip install --quiet coveralls
+  - coverage run setup.py test
+  - coveralls
